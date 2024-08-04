@@ -100,7 +100,7 @@ input[type="number"] {
   gap: 50px;
   align-items: center;
 }
-.header__menu-link:hover {
+.header__menu-link.active {
   color: #64099b;
 }
 .header__cart {
