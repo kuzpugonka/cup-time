@@ -379,7 +379,7 @@ input[type="number"] {
   margin-bottom: 8px;
 }
 .order__radio {
-  margin-right: ;
+  margin-right: 8px;
 }
 
 @media (max-width: 1240px) {
