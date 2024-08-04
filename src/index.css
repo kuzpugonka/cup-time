@@ -83,6 +83,7 @@ input[type="number"] {
   color: #fff;
 }
 .header__container {
+  border-radius: 6px;
   padding: 12px 26px;
   max-width: 1352px;
   backdrop-filter: blur(60px);
@@ -312,7 +313,6 @@ input[type="number"] {
   margin: 0;
 }
 .carts__itog {
-  width: 420px;
   display: flex;
   padding: 24px;
   justify-content: space-between;
@@ -409,6 +409,12 @@ input[type="number"] {
   .footer__menu {
     gap: 32px;
   }
+  .carts {
+    margin-top: 171px;
+  }
+  .carts__list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
 }
 
 @media (max-width: 940px) {
@@ -475,6 +481,56 @@ input[type="number"] {
   .footer__social {
     margin-top: 12px;
   }
+  .carts {
+    margin-top: 139px;
+    margin-bottom: 60px;
+  }
+  .carts__container {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+  .carts__title {
+    margin-bottom: 0;
+  }
+  .carts__list {
+    gap: 16px;
+  }
+  .carts__itog {
+    grid-row: 1;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .carts__itog-sum {
+    display: flex;
+    gap: 6px;
+  }
+  .cart {
+    font-size: 16px;
+    min-height: 280px;
+  }
+  .cart__sum {
+    margin-bottom: 12px;
+  }
+  .cart__sum-num {
+    font-size: 16px;
+  }
+  .cart__title {
+    font-size: 16px;
+  }
+  .order {
+    margin-bottom: 80px;
+  }
+  .order__form {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .order__input {
+    padding: 12px 16px;
+  }
+  .order__pay {
+    padding-top: 20px;
+  }
 }
 
 @media (max-width: 766px) {
@@ -482,11 +538,11 @@ input[type="number"] {
     padding: 0 16px;
   }
   .header {
-    padding: 0 16px;
+    padding: 0 ;
     top: 0;
   }
   .header__container {
-    padding: 8px 0;
+    padding: 8px 16px;
   }
   .header__nav {
     display: none;
@@ -534,4 +590,19 @@ input[type="number"] {
   .footer__info {
     order: 4;
   }
+  .carts {
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
+  .carts__itog {
+    margin-bottom: 6px;
+  }
+  .carts__itog-sum {
+    flex-direction: column;
+    gap: 2px;
+  }
+.carts__list {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
 }
