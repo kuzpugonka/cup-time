@@ -262,7 +262,7 @@ input[type="number"] {
 }
 .carts__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(198px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
   gap: 20px;
 }
 .cart {
@@ -382,6 +382,12 @@ input[type="number"] {
   margin-right: 8px;
 }
 
+.skeleton-wrapper {
+  width: 100%;
+  height: 600px;
+  background-color: #f2f9f7;
+}
+
 @media (max-width: 1240px) {
   .container {
     padding: 0 42px;
@@ -413,7 +419,7 @@ input[type="number"] {
     margin-top: 171px;
   }
   .carts__list {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
   .cart__title {
     white-space: initial;
@@ -424,6 +430,9 @@ input[type="number"] {
   }
   .order__form {
     max-width: 620px;
+  }
+  .skeleton-wrapper {
+    height: 450px;
   }
 }
 
@@ -504,7 +513,7 @@ input[type="number"] {
   }
   .carts__list {
     gap: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(159px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(159px, 1fr));
   }
   .carts__itog {
     grid-row: 1;
@@ -543,6 +552,9 @@ input[type="number"] {
   }
   .order__pay {
     padding-top: 20px;
+  }
+  .skeleton-wrapper {
+    height: 360px;
   }
 }
 
@@ -615,7 +627,7 @@ input[type="number"] {
     gap: 2px;
   }
   .carts__list {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 8px;
   }
 }

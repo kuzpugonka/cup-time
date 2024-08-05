@@ -1,6 +1,28 @@
+import { useState } from "react";
 import { API_URL } from "../const";
+import { useCart } from "../context/CartContext";
 
 export const CartItem = ({ data }) => {
+  const [itemQuantity, setItemQuantity] = useState(data.quantity);
+  const { updateQuantity, removeFromCart } = useCart();
+
+
+  const handleDecrease = () => {
+    const newQuantity = itemQuantity - 1;
+    if (itemQuantity > 0) {
+      setItemQuantity(newQuantity);
+      updateQuantity(data.id, newQuantity)
+    } else {
+      removeFromCart(data.id)
+    }
+  };
+
+  const handleIncrease = () => {
+    const newQuantity = itemQuantity + 1;
+    setItemQuantity(newQuantity);
+    updateQuantity(data.id, newQuantity)
+  };
+
   return (
     <li className="carts__item">
       <article className="cart">
@@ -12,7 +34,7 @@ export const CartItem = ({ data }) => {
         <div className="cart__content">
           <h3 className="cart__title">{data.title}</h3>
           <div className="cart__sum">
-            <button className="cart__sum-min">
+            <button className="cart__sum-min" onClick={handleDecrease}>
               <svg
                 width="36"
                 height="36"
@@ -31,8 +53,13 @@ export const CartItem = ({ data }) => {
                 <rect x="12" y="17" width="12" height="2" fill="#1D1C1D" />
               </svg>
             </button>
-            <input className="cart__sum-num" type="number" value={1} />
-            <button className="cart__sum-max">
+            <input
+              className="cart__sum-num"
+              type="number"
+              value={data.quantity}
+              readOnly
+            />
+            <button className="cart__sum-max" onClick={handleIncrease}>
               <svg
                 width="36"
                 height="36"
@@ -60,7 +87,7 @@ export const CartItem = ({ data }) => {
               </svg>
             </button>
           </div>
-          <p className="cart__price">{data.price}&nbsp;₽</p>
+          <p className="cart__price">{data.price * data.quantity}&nbsp;₽</p>
         </div>
       </article>
     </li>
