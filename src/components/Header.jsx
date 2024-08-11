@@ -1,9 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { useProducts } from "../context/ProductContext";
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
 export const Header = () => {
   const location = useLocation();
+  const { cart } = useCart();
   const { categories } = useProducts();
 
   const [isMenuOpen, setIsOpenMenu] = useState(false);
@@ -80,7 +82,7 @@ export const Header = () => {
 
         <div className="header__cart">
           <Link to="/cart" className="header__cart-link">
-            6
+          {cart ? cart.reduce((acc, item) => item.quantity + acc, 0) : 0}
           </Link>
 
           <button
